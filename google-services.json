@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "789034716130",
+    "project_id": "sehatq-b2674",
+    "storage_bucket": "sehatq-b2674.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:789034716130:android:e49a9a4926d11675f9c7bb",
+        "android_client_info": {
+          "package_name": "com.project.sehatq_test_android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "789034716130-7lr6ofbc55bop2kjsvjih9flirb9l92j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDtGtTBRSh3CNLl2HvScqpA9WX0IT5eyZ0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "789034716130-7lr6ofbc55bop2kjsvjih9flirb9l92j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
