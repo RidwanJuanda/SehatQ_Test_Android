@@ -31,7 +31,7 @@ class SearchProductListAdapter(private val context: Context, private val dataLis
     }
 
     override fun getItemCount(): Int {
-        return dataList.size
+        return productListFiltered.size
     }
 
     inner class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

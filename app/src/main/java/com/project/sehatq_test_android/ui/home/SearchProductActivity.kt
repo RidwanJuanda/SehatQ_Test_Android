@@ -4,7 +4,6 @@ package com.project.sehatq_test_android.ui.home
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.widget.doOnTextChanged
@@ -78,8 +77,8 @@ class SearchProductActivity : AppCompatActivity() {
         }
     }
 
-    private val search: String
-        get() = edtSearch.text.toString()
+//    private val search: String
+//        get() = edtSearch.text.toString()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -93,7 +92,6 @@ class SearchProductActivity : AppCompatActivity() {
         rvSearchProduct?.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
 
         edtSearch.doOnTextChanged { text, _, _, _ ->
-            Toast.makeText(this, text, Toast.LENGTH_SHORT).show()
             productAdapter?.filter?.filter(text)
         }
 
