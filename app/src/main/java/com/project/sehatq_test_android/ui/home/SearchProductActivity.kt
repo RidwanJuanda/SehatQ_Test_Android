@@ -92,7 +92,7 @@ class SearchProductActivity : AppCompatActivity() {
         rvSearchProduct?.adapter = productAdapter
         rvSearchProduct?.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
 
-        edtSearch.doOnTextChanged { text, start, before, count ->
+        edtSearch.doOnTextChanged { text, _, _, _ ->
             Toast.makeText(this, text, Toast.LENGTH_SHORT).show()
             productAdapter?.filter?.filter(text)
         }

@@ -20,8 +20,7 @@ import kotlin.collections.ArrayList
 class SearchProductListAdapter(private val context: Context, private val dataList: ArrayList<SearchProductListModel>)
     : RecyclerView.Adapter<SearchProductListAdapter.MyViewHolder>(), Filterable {
 
-    private var productList: ArrayList<SearchProductListModel>? = null
-    private var productListFiltered: ArrayList<SearchProductListModel>? = null
+    private var productListFiltered: List<SearchProductListModel> = dataList
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         return MyViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_search_product_list, parent, false))
@@ -33,11 +32,6 @@ class SearchProductListAdapter(private val context: Context, private val dataLis
 
     override fun getItemCount(): Int {
         return dataList.size
-    }
-
-    fun searchProductAdapter(productList: ArrayList<SearchProductListModel>) {
-        this.productList = productList
-        this.productListFiltered = productList
     }
 
     inner class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -60,10 +54,10 @@ class SearchProductListAdapter(private val context: Context, private val dataLis
             override fun performFiltering(charSequence: CharSequence): FilterResults {
                 val charString = charSequence.toString()
                 productListFiltered = if (charString.isEmpty()) {
-                    productList
+                    dataList
                 } else {
                     val filteredList: ArrayList<SearchProductListModel> = ArrayList()
-                    for (row in productList!!) {
+                    for (row in dataList) {
                         if (row.getTitleProduct().toLowerCase(Locale.ROOT)
                                 .contains(charString.toLowerCase(Locale.ROOT)) || row.getTitleProduct()
                                 .contains(charSequence)) {
@@ -78,7 +72,7 @@ class SearchProductListAdapter(private val context: Context, private val dataLis
             }
 
             override fun publishResults(charSequence: CharSequence?, filterResults: FilterResults) {
-                productListFiltered = filterResults.values as ArrayList<SearchProductListModel>?
+                productListFiltered = filterResults.values as ArrayList<SearchProductListModel>
                 notifyDataSetChanged()
             }
         }
